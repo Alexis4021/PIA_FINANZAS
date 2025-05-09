@@ -47,6 +47,10 @@ def mostrar_reporte_completo(df):
     print("\n Reporte completo:\n")
     print(df[['nombre', 'clasificacion_abc', 'punto_reorden', 'eoq']].head(20))
 
+def mostrar_datos(df):
+    print("\n Datos completos \n")
+    print(df)
+
 def menu():
     while True:
         print("\n--- MENÚ DE INVENTARIO ---")
@@ -55,6 +59,7 @@ def menu():
         print("3. Cantidad Económica de Pedido (EOQ)")
         print("4. Ver Reporte Completo")
         print("5. Salir")
+        print("6. Mostrar datos")
         opcion = input("Selecciona una opción: ")
 
         df = preparar_datos(cargar_datos())
@@ -70,6 +75,8 @@ def menu():
         elif opcion == '5':
             print("¡Hasta luego!")
             break
+        elif opcion == '6':
+            mostrar_datos(df)
         else:
             print("Opción no válida. Intenta de nuevo.")
 
